@@ -35,4 +35,24 @@ public class ProductService {
                 .filter(p -> p.getName().contains(name))
                 .toList();
     }
+
+    public ProductService() {
+        DigitalProduct dp = new DigitalProduct();
+        dp.setId(nextId++);
+        dp.setName("Windows 11");
+        dp.setPrice(49.99);
+        dp.setDownloadUrl("https://download.microsoft.com/windows11");
+        dp.setFileSize(5500);
+
+        products.add(dp);
+
+        PhysicalProduct pp = new PhysicalProduct();
+        pp.setId(nextId++);
+        pp.setName("Gaming Computer");
+        pp.setPrice(5000);
+        pp.setWeightKg(2.0);
+        pp.setDimensions("45cm x 15cm x20cm");
+
+        products.add(pp);
+    }
 }
